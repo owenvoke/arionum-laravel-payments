@@ -51,13 +51,13 @@ The MIT License (MIT). Please see [License File](LICENSE.md) for more informatio
 [ico-version]: https://img.shields.io/packagist/v/pxgamer/arionum-laravel-payments.svg?style=flat-square
 [ico-license]: https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square
 [ico-travis]: https://img.shields.io/travis/pxgamer/arionum-laravel-payments/master.svg?style=flat-square
-[ico-styleci]: https://styleci.io/repos//shield
+[ico-styleci]: https://styleci.io/repos/148158377/shield
 [ico-code-quality]: https://img.shields.io/codecov/c/github/pxgamer/arionum-laravel-payments.svg?style=flat-square
 [ico-downloads]: https://img.shields.io/packagist/dt/pxgamer/arionum-laravel-payments.svg?style=flat-square
 
 [link-packagist]: https://packagist.org/packages/pxgamer/arionum-laravel-payments
 [link-travis]: https://travis-ci.com/pxgamer/arionum-laravel-payments
-[link-styleci]: https://styleci.io/repos/
+[link-styleci]: https://styleci.io/repos/148158377
 [link-code-quality]: https://codecov.io/gh/pxgamer/arionum-laravel-payments
 [link-downloads]: https://packagist.org/packages/pxgamer/arionum-laravel-payments
 [link-author]: https://github.com/pxgamer
