@@ -16,7 +16,9 @@ class ArionumProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        $this->publishes([
+            __DIR__.'/config/arionum.php' => config_path('arionum.php'),
+        ]);
     }
 
     /**
