@@ -3,6 +3,7 @@
 namespace pxgamer\ArionumLaravel;
 
 use Illuminate\Support\ServiceProvider;
+use pxgamer\Arionum\Arionum;
 
 /**
  * Class ArionumProvider
@@ -29,5 +30,9 @@ class ArionumProvider extends ServiceProvider
     public function register()
     {
         $this->mergeConfigFrom(__DIR__.'/../config/arionum.php', 'arionum');
+
+        $this->app->singleton('arionum', function () {
+            return new Arionum(config('arionum.node_uri'));
+        });
     }
 }
