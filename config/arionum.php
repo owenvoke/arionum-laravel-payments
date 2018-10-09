@@ -14,4 +14,16 @@ return [
 
     'node_uri' => env('ARIONUM_NODE_URI'),
 
+    /*
+    |--------------------------------------------------------------------------
+    | Required Confirmations
+    |--------------------------------------------------------------------------
+    |
+    | This is the number of confirmations that are required for a transaction
+    | to be marked as successful.
+    |
+    */
+
+    'confirmations' => 10,
+
 ];
