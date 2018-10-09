@@ -30,7 +30,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "pxgamer\\ArionumLaravel\\ArionumProvider"
+                "pxgamer\\ArionumLaravel\\ArionumServiceProvider"
             ]
         }
     }

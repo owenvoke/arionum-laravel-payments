@@ -6,9 +6,9 @@ use Illuminate\Support\ServiceProvider;
 use pxgamer\Arionum\Arionum;
 
 /**
- * Class ArionumProvider
+ * Class ArionumServiceProvider
  */
-class ArionumProvider extends ServiceProvider
+class ArionumServiceProvider extends ServiceProvider
 {
     /**
      * Bootstrap services.
