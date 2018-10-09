@@ -18,7 +18,7 @@ class ArionumProvider extends ServiceProvider
     {
         $this->publishes([
             __DIR__.'/../config/arionum.php' => config_path('arionum.php'),
-        ]);
+        ], 'arionum.config');
     }
 
     /**
