@@ -10,6 +10,8 @@ use pxgamer\Arionum\Arionum;
  */
 class ArionumServiceProvider extends ServiceProvider
 {
+    private const PACKAGE_CONFIG_FILE = __DIR__.'/../config/arionum.php';
+
     /**
      * Bootstrap services.
      *
@@ -18,7 +20,7 @@ class ArionumServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->publishes([
-            __DIR__.'/../config/arionum.php' => config_path('arionum.php'),
+            self::PACKAGE_CONFIG_FILE => config_path('arionum.php'),
         ], 'arionum.config');
     }
 
@@ -29,7 +31,7 @@ class ArionumServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->mergeConfigFrom(__DIR__.'/../config/arionum.php', 'arionum');
+        $this->mergeConfigFrom(self::PACKAGE_CONFIG_FILE, 'arionum');
 
         $this->app->singleton('arionum', function () {
             return new Arionum(config('arionum.node_uri'));
