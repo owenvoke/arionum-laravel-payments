@@ -10,6 +10,9 @@ use pxgamer\Arionum\Arionum;
  */
 class ArionumServiceProvider extends ServiceProvider
 {
+    /**
+     * The Arionum configuration path.
+     */
     private const PACKAGE_CONFIG_FILE = __DIR__.'/../config/arionum.php';
 
     /**
