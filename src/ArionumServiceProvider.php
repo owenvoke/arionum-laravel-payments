@@ -20,7 +20,7 @@ class ArionumServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    public function boot()
+    public function boot(): void
     {
         $this->publishes([
             self::PACKAGE_CONFIG_FILE => config_path('arionum.php'),
@@ -32,10 +32,18 @@ class ArionumServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    public function register()
+    public function register(): void
     {
         $this->mergeConfigFrom(self::PACKAGE_CONFIG_FILE, 'arionum');
 
+        $this->registerArionum();
+    }
+
+    /**
+     * Register the Arionum singleton.
+     */
+    public function registerArionum(): void
+    {
         $this->app->singleton('arionum', function () {
             return new Arionum(config('arionum.node_uri'));
         });
