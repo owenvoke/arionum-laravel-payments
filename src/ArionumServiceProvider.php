@@ -25,6 +25,10 @@ class ArionumServiceProvider extends ServiceProvider
         $this->publishes([
             self::PACKAGE_CONFIG_FILE => config_path('arionum.php'),
         ], 'arionum.config');
+
+        $this->mergeConfigFrom(self::PACKAGE_CONFIG_FILE, 'arionum');
+
+        $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
     }
 
     /**
@@ -34,18 +38,37 @@ class ArionumServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
-        $this->mergeConfigFrom(self::PACKAGE_CONFIG_FILE, 'arionum');
+        $this->registerArionumSingletons();
 
-        $this->registerArionum();
+        $this->registerArionumPayment();
     }
 
     /**
-     * Register the Arionum singleton.
+     * Register Arionum singletons.
      */
-    public function registerArionum(): void
+    private function registerArionumSingletons(): void
     {
-        $this->app->singleton('arionum', function () {
-            return new Arionum(config('arionum.node_uri'));
+        $this->app->singleton('arionum', function ($app) {
+            return new Arionum($app['config']->get('arionum.node_uri'));
         });
+    }
+
+    /**
+     * Register Arionum
+     */
+    private function registerArionumPayment()
+    {
+        $this->app->bind('ArionumPayment', function () {
+            return $this->resolveArionumPayment();
+        });
+    }
+
+    /**
+     * @return mixed
+     */
+    private function resolveArionumPayment()
+    {
+        // ...
+        return;
     }
 }
