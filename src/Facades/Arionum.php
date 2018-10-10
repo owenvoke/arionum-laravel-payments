@@ -3,6 +3,7 @@
 namespace pxgamer\ArionumLaravel\Facades;
 
 use Illuminate\Support\Facades\Facade;
+use pxgamer\Arionum\Transaction;
 
 /**
  * Class Arionum
@@ -19,7 +20,7 @@ use Illuminate\Support\Facades\Facade;
  * @method static \stdClass getBlock(int $height)
  * @method static array getBlockTransactions(string $blockId)
  * @method static string getNodeVersion()
- * @method static string sendTransaction(\pxgamer\Arionum\Transaction $transaction)
+ * @method static string sendTransaction(Transaction $transaction)
  * @method static int getMempoolSize()
  * @method static int getRandomNumber(int $height, int $minimum, int $maximum, string $seed = null)
  * @method static array getMasternodes()
