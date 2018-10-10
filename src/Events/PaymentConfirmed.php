@@ -6,9 +6,9 @@ use Illuminate\Queue\SerializesModels;
 use pxgamer\ArionumLaravel\Models\Payment;
 
 /**
- * Class ConfirmedPaymentEvent
+ * Class PaymentConfirmed
  */
-class ConfirmedPaymentEvent
+class PaymentConfirmed
 {
     use SerializesModels;
 
@@ -18,7 +18,7 @@ class ConfirmedPaymentEvent
     public $confirmedPayment;
 
     /**
-     * ConfirmedPaymentEvent constructor.
+     * PaymentConfirmed constructor.
      * This is fired when the number of confirmations on the blockchain meets the minimum confirmations in the config.
      *
      * @param Payment $confirmedPayment
