@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\Facade;
  * @method static string getBase58(string $data)
  * @method static string getBalance(string $address)
  * @method static string getPendingBalance(string $address)
- * @method static string getTransactions(string $address)
+ * @method static \stdClass[] getTransactions(string $address)
  * @method static \stdClass getTransaction(string $transactionId)
  * @method static string getPublicKey(string $address)
  * @method static \stdClass generateAccount()
