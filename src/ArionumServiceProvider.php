@@ -16,6 +16,11 @@ class ArionumServiceProvider extends ServiceProvider
     private const PACKAGE_CONFIG_FILE = __DIR__.'/../config/arionum.php';
 
     /**
+     * The available package commands.
+     */
+    private const PACKAGE_COMMANDS = [];
+
+    /**
      * Bootstrap services.
      *
      * @return void
@@ -29,6 +34,10 @@ class ArionumServiceProvider extends ServiceProvider
         $this->mergeConfigFrom(self::PACKAGE_CONFIG_FILE, 'arionum');
 
         $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
+
+        if ($this->app->runningInConsole()) {
+            $this->commands(self::PACKAGE_COMMANDS);
+        }
     }
 
     /**
