@@ -16,6 +16,18 @@ return [
 
     /*
     |--------------------------------------------------------------------------
+    | Main Wallet Address
+    |--------------------------------------------------------------------------
+    |
+    | This is the main address that payments will be forwarded to upon
+    | completion of the transaction.
+    |
+    */
+
+    'wallet_address' => env('ARIONUM_WALLET_ADDRESS'),
+
+    /*
+    |--------------------------------------------------------------------------
     | Required Confirmations
     |--------------------------------------------------------------------------
     |
