@@ -5,7 +5,7 @@
     "license": "MIT",
     "require": {
         "php": "^7.1",
-        "pxgamer/arionum-php": "^1.4"
+        "pxgamer/arionum-php": "^2.0"
     },
     "require-dev": {
         "mockery/mockery": "^1.0",
