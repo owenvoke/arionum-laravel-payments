@@ -20,7 +20,9 @@ class ArionumServiceProvider extends ServiceProvider
     /**
      * The available package commands.
      */
-    private const PACKAGE_COMMANDS = [];
+    private const PACKAGE_COMMANDS = [
+        Commands\CheckPayments::class,
+    ];
 
     /**
      * Bootstrap services.
