@@ -4,6 +4,8 @@ namespace pxgamer\ArionumLaravel;
 
 use Illuminate\Support\ServiceProvider;
 use pxgamer\Arionum\Arionum;
+use pxgamer\ArionumLaravel\Models\Account;
+use pxgamer\ArionumLaravel\Models\Payment;
 
 /**
  * Class ArionumServiceProvider
@@ -77,7 +79,18 @@ class ArionumServiceProvider extends ServiceProvider
      */
     private function resolveArionumPayment()
     {
-        // ...
-        return;
+        /** @var \stdClass $generated */
+        $generated = Facades\Arionum::generateAccount();
+
+        $account = Account::create([
+            'address'     => $generated->address,
+            'public_key'  => $generated->public_key,
+            'private_key' => $generated->private_key,
+        ]);
+
+        $payment = Payment::make();
+        $payment->address = $account->address;
+
+        return $payment;
     }
 }
