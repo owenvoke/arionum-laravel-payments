@@ -36,6 +36,6 @@ return [
     |
     */
 
-    'confirmations' => 10,
+    'confirmations' => env('ARIONUM_MIN_CONFIRMATIONS', 10),
 
 ];
